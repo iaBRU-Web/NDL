@@ -1,0 +1,2316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRU Music - Rwandan Songs & Videos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-music"></i>
+                    <div>
+                        <h1>BRU Music Rwanda</h1>
+                        <div class="tagline">WATCH & DOWNLOAD 1000+ RWANDAN SONGS FREE</div>
+                    </div>
+                </div>
+                
+                <div class="header-links">
+                    <a href="https://bru-ai.vercel.app" target="_blank" class="site-link">
+                        <i class="fas fa-robot"></i> BRU AI
+                    </a>
+                    <a href="https://chatbru6.vercel.app" target="_blank" class="site-link">
+                        <i class="fas fa-comments"></i> ChatBRU
+                    </a>
+                    <button class="favorites-btn" id="showFavorites">
+                        <i class="fas fa-heart"></i>
+                        <span class="favorites-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Enhanced Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-header">
+                    <h2><i class="fas fa-search"></i> Find Rwandan Songs</h2>
+                    <p>Search through our collection of 1000+ Rwandan music videos</p>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search by artist, song title, genre, or year...">
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                
+                <div class="results-counter" id="resultsCounter">
+                    <i class="fas fa-music"></i>
+                    <span>Showing 12 of 1000+ songs</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quick Stats -->
+        <div class="quick-stats">
+            <div class="stat-card">
+                <i class="fas fa-music"></i>
+                <div>
+                    <h3 id="totalCount">1000+</h3>
+                    <p>Rwandan Songs</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-heart"></i>
+                <div>
+                    <h3 id="favoritesTotal">0</h3>
+                    <p>Your Favorites</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-history"></i>
+                <div>
+                    <h3 id="watchedTotal">0</h3>
+                    <p>Recently Played</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-download"></i>
+                <div>
+                    <h3 id="downloadsTotal">0</h3>
+                    <p>Downloads</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category Filters -->
+        <div class="categories">
+            <button class="category-btn active" data-category="all">
+                <i class="fas fa-music"></i> All Songs
+            </button>
+            <button class="category-btn" data-category="r&b">
+                <i class="fas fa-guitar"></i> R&B
+            </button>
+            <button class="category-btn" data-category="gospel">
+                <i class="fas fa-church"></i> Gospel
+            </button>
+            <button class="category-btn" data-category="traditional">
+                <i class="fas fa-drum"></i> Traditional
+            </button>
+            <button class="category-btn" data-category="hiphop">
+                <i class="fas fa-microphone"></i> Hip Hop
+            </button>
+            <button class="category-btn" data-category="reggae">
+                <i class="fas fa-record-vinyl"></i> Reggae
+            </button>
+            <button class="category-btn" data-category="afrobeat">
+                <i class="fas fa-globe-africa"></i> Afrobeat
+            </button>
+            <button class="category-btn" data-category="dancehall">
+                <i class="fas fa-play-circle"></i> Dancehall
+            </button>
+            <button class="category-btn" data-category="pop">
+                <i class="fas fa-star"></i> Pop
+            </button>
+            <button class="category-btn" data-category="collaboration">
+                <i class="fas fa-users"></i> Collaborations
+            </button>
+        </div>
+        
+        <!-- Top Artists Section -->
+        <div class="top-artists">
+            <h3 class="section-title">
+                <i class="fas fa-crown"></i> Top Rwandan Artists
+            </h3>
+            <div class="artists-grid">
+                <div class="artist-card" data-artist="Bruce Melodie">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bruce Melodie">
+                    <h4>Bruce Melodie</h4>
+                </div>
+                <div class="artist-card" data-artist="The Ben">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="The Ben">
+                    <h4>The Ben</h4>
+                </div>
+                <div class="artist-card" data-artist="Meddy">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Meddy">
+                    <h4>Meddy</h4>
+                </div>
+                <div class="artist-card" data-artist="Urban Boys">
+                    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Urban Boys">
+                    <h4>Urban Boys</h4>
+                </div>
+                <div class="artist-card" data-artist="King James">
+                    <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="King James">
+                    <h4>King James</h4>
+                </div>
+            </div>
+        </div>
+        
+        <!-- View Mode Toggle -->
+        <div class="view-mode">
+            <div class="view-toggle">
+                <button class="view-btn active" data-view="grid">
+                    <i class="fas fa-grid"></i> Grid View
+                </button>
+                <button class="view-btn" data-view="compact">
+                    <i class="fas fa-list"></i> Compact View
+                </button>
+            </div>
+            
+            <div class="sort-options">
+                <select id="sortSelect">
+                    <option value="default">Sort by: Popular</option>
+                    <option value="title">Title (A-Z)</option>
+                    <option value="year-new">Year (Newest)</option>
+                    <option value="year-old">Year (Oldest)</option>
+                    <option value="views">Views (Highest)</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Songs Grid -->
+        <div class="songs-grid" id="songsGrid">
+            <!-- Song items will be generated by JavaScript -->
+        </div>
+        
+        <!-- Pagination -->
+        <div class="pagination" id="pagination">
+            <!-- Pagination buttons will be generated by JavaScript -->
+        </div>
+    </main>
+    
+    <!-- Video Modal -->
+    <div class="modal-overlay" id="videoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Song Title</h3>
+                <div class="modal-actions">
+                    <button class="modal-action-btn" id="downloadBtn" title="Download Video">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="modal-action-btn" id="favoriteBtn" title="Add to Favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="close-btn" id="closeModal">&times;</button>
+                </div>
+            </div>
+            <div class="video-container">
+                <iframe id="youtubePlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+                <p class="modal-info" id="modalInfo"></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Favorites Modal -->
+    <div class="modal-overlay" id="favoritesModal">
+        <div class="modal-content favorites-content">
+            <div class="modal-header">
+                <h3 class="modal-title">
+                    <i class="fas fa-heart"></i> Your Favorite Rwandan Songs
+                </h3>
+                <button class="close-btn" id="closeFavorites">&times;</button>
+            </div>
+            <div class="favorites-list" id="favoritesList">
+                <!-- Favorites will be displayed here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Download Instructions Modal -->
+    <div class="modal-overlay" id="downloadModal">
+        <div class="modal-content download-content">
+            <div class="modal-header">
+                <h3 class="modal-title">
+                    <i class="fas fa-download"></i> Download Song/Video
+                </h3>
+                <button class="close-btn" id="closeDownload">&times;</button>
+            </div>
+            <div class="download-instructions">
+                <h4>Download Options:</h4>
+                <div class="download-options">
+                    <a href="#" id="downloadLink1" target="_blank" class="download-option">
+                        <i class="fab fa-youtube"></i>
+                        <div>
+                            <h5>Watch on YouTube</h5>
+                            <p>Open and download from YouTube</p>
+                        </div>
+                    </a>
+                    <a href="#" id="downloadLink2" target="_blank" class="download-option">
+                        <i class="fas fa-cloud-download"></i>
+                        <div>
+                            <h5>Download as MP3</h5>
+                            <p>Convert to MP3 using Y2Mate</p>
+                        </div>
+                    </a>
+                    <a href="#" id="downloadLink3" target="_blank" class="download-option">
+                        <i class="fas fa-video"></i>
+                        <div>
+                            <h5>Download Video</h5>
+                            <p>Get MP4 video file</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="download-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Note: Downloads are facilitated through third-party services. Please respect copyright laws.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-music"></i>
+                        <h2>NDL Music Rwanda</h2>
+                    </div>
+                    <p class="footer-description">Your ultimate destination for Rwandan music. Stream 1000+ songs and videos from Rwanda's top artists absolutely free!</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="https://bru-ai.vercel.app" target="_blank">
+                            <i class="fas fa-robot"></i> BRU AI Platform
+                        </a>
+                        <a href="https://chatbru6.vercel.app" target="_blank">
+                            <i class="fas fa-comments"></i> ChatBRU Platform
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Popular Artists</h3>
+                    <ul class="footer-features">
+                        <li><i class="fas fa-microphone"></i> Bruce Melodie</li>
+                        <li><i class="fas fa-microphone"></i> The Ben</li>
+                        <li><i class="fas fa-microphone"></i> Meddy</li>
+                        <li><i class="fas fa-microphone"></i> Urban Boys</li>
+                        <li><i class="fas fa-microphone"></i> King James</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p class="copyright">
+                        <strong>© 2024 BRU Music Rwanda. All Rights Reserved.</strong><br>
+                        <strong>Created by INEZA AIME BRUNO FT NDLEO</strong><br>
+                        Promoting Rwandan music and culture worldwide.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f171e 0%, #1a1a2e 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a242f 0%, #2c3e50 100%);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            color: #ff6b6b;
+            font-size: 2.5rem;
+        }
+        
+        .logo h1, .logo h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+        }
+        
+        .tagline {
+            font-size: 1rem;
+            color: #b0b9c0;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+        
+        .header-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .site-link {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .site-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        .favorites-btn {
+            background: linear-gradient(135deg, #4ecdc4, #6ae6dd);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+        }
+        
+        .favorites-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+        }
+        
+        .favorites-count {
+            background-color: white;
+            color: #4ecdc4;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        
+        /* Quick Stats */
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #233445 0%, #2c3e50 100%);
+            padding: 25px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.2);
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+        
+        .stat-card i {
+            font-size: 2.5rem;
+            color: #ff6b6b;
+        }
+        
+        .stat-card h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+        
+        .stat-card p {
+            color: #b0b9c0;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        
+        /* Search Section */
+        .search-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 30px 0;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .search-header {
+            text-align: center;
+        }
+        
+        .search-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        
+        .search-header p {
+            color: #b0b9c0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .search-box {
+            display: flex;
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+        }
+        
+        .search-box input {
+            flex-grow: 1;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
+            border-color: #ff6b6b;
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        .results-counter {
+            background: rgba(255, 107, 107, 0.2);
+            color: #ffcccc;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 1rem;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+        
+        /* Category Filters */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .category-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+        
+        .category-btn.active {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+            border-color: rgba(255, 107, 107, 0.5);
+        }
+        
+        /* Top Artists Section */
+        .top-artists {
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+        
+        .section-title i {
+            color: #ff6b6b;
+        }
+        
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        
+        .artist-card {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .artist-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+        }
+        
+        .artist-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .artist-card h4 {
+            padding: 15px;
+            text-align: center;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        
+        /* View Mode Toggle */
+        .view-mode {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .view-toggle {
+            display: flex;
+            background: #2c3e50;
+            border-radius: 30px;
+            padding: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .view-btn {
+            padding: 10px 25px;
+            border: none;
+            background: none;
+            color: #b0b9c0;
+            cursor: pointer;
+            border-radius: 25px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .view-btn.active {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+        }
+        
+        .sort-options select {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sort-options select:hover {
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+        
+        /* Songs Grid */
+        .songs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .song-item {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .song-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.2);
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+        
+        .song-thumbnail {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .song-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .song-item:hover .song-thumbnail img {
+            transform: scale(1.05);
+        }
+        
+        .favorite-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 107, 107, 0.9);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .favorite-badge:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .favorite-badge.active {
+            background: #ff6b6b;
+        }
+        
+        .song-duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .song-artist {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .watch-options {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 15px;
+        }
+        
+        .watch-btn {
+            background: rgba(255, 107, 107, 0.9);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex: 1;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .watch-btn:hover {
+            background: #ff6b6b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .watch-btn.youtube {
+            background: rgba(255, 0, 0, 0.8);
+        }
+        
+        .watch-btn.youtube:hover {
+            background: #ff0000;
+        }
+        
+        .watch-btn.download {
+            background: rgba(78, 205, 196, 0.8);
+        }
+        
+        .watch-btn.download:hover {
+            background: #4ecdc4;
+        }
+        
+        .song-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .song-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .song-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+        
+        .song-year {
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+        
+        .song-description {
+            color: #b0b9c0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+        
+        .song-genres {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .genre {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+        
+        .genre:hover {
+            background: rgba(255, 107, 107, 0.2);
+            transform: scale(1.05);
+        }
+        
+        /* Song Stats */
+        .song-stats {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #b0b9c0;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .stat i {
+            color: #ff6b6b;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .page-btn {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .page-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+        
+        .page-btn.active {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+        }
+        
+        .page-btn.dots {
+            background: none;
+            cursor: default;
+            border: none;
+        }
+        
+        .page-btn.dots:hover {
+            transform: none;
+            box-shadow: none;
+        }
+        
+        /* Modal for Video Player */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            width: 100%;
+            max-width: 1100px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            animation: modalFade 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @keyframes modalFade {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+        
+        .modal-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .modal-action-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #ffffff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .modal-action-btn:hover {
+            background: #ff6b6b;
+            transform: scale(1.1);
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .close-btn:hover {
+            color: #ff6b6b;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .modal-footer {
+            padding: 20px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .modal-info {
+            color: #b0b9c0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Favorites Content */
+        .favorites-content {
+            max-height: 80vh;
+            overflow-y: auto;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+        }
+        
+        .favorites-list {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .favorite-item {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .favorite-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        .favorite-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .favorite-item-info {
+            padding: 15px;
+        }
+        
+        .favorite-item-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        
+        .favorite-item-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .favorite-item-btn {
+            flex: 1;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .favorite-item-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .empty-favorites {
+            text-align: center;
+            padding: 60px 20px;
+            color: #b0b9c0;
+        }
+        
+        .empty-favorites i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        
+        /* Download Content */
+        .download-content {
+            max-width: 600px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+        }
+        
+        .download-instructions {
+            padding: 30px;
+        }
+        
+        .download-instructions h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        
+        .download-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .download-option {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            border-radius: 15px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .download-option:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+        
+        .download-option i {
+            font-size: 2rem;
+            color: #ff6b6b;
+        }
+        
+        .download-option h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .download-option p {
+            color: #b0b9c0;
+            font-size: 0.9rem;
+        }
+        
+        .download-note {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .download-note i {
+            color: #ffc107;
+            font-size: 1.5rem;
+        }
+        
+        .download-note p {
+            color: #b0b9c0;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a242f 0%, #2c3e50 100%);
+            padding: 40px 0 20px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .footer-description {
+            color: #b0b9c0;
+            line-height: 1.8;
+            font-weight: 600;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .footer-links a {
+            color: #b0b9c0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+        
+        .footer-links a:hover {
+            color: #ff6b6b;
+            transform: translateX(5px);
+        }
+        
+        .footer-features {
+            list-style: none;
+        }
+        
+        .footer-features li {
+            color: #b0b9c0;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+        
+        .footer-features i {
+            color: #ff6b6b;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 25px;
+            grid-column: 1 / -1;
+        }
+        
+        .copyright {
+            color: #b0b9c0;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .copyright strong {
+            color: #ffffff;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .songs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .header-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .quick-stats {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            
+            .songs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .categories {
+                gap: 8px;
+            }
+            
+            .category-btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+            
+            .search-box {
+                flex-direction: column;
+            }
+            
+            .search-btn {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                margin-top: 15px;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .song-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .song-year {
+                align-self: flex-start;
+                margin-left: 0;
+            }
+            
+            .watch-options {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .favorites-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .songs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .song-stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .search-box input {
+                padding: 15px 20px;
+            }
+            
+            .song-info {
+                padding: 15px;
+            }
+            
+            .pagination {
+                gap: 5px;
+            }
+            
+            .page-btn {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+
+    <script>
+        // RWANDAN MUSIC DATA - 1000+ Songs
+        const rwandanArtists = [
+            "Bruce Melodie", "The Ben", "Meddy", "Urban Boys", "King James",
+            "Riderman", "Tom Close", "Miss Shanel", "Knowless", "Christopher",
+            "Chriss Eazy", "Bwiza", "Rema", "Bull Dog", "Fireman",
+            "Ish Kevin", "Rosa", "Ariel", "Alvan", "Rafiki",
+            "Bobo", "Nellia", "Rutayisire", "Deo", "Adolphe",
+            "Mike Kayihura", "King Kaka", "Alain", "Bobby", "Mani Martin",
+            "Supa", "Lion F", "T-Max", "Nikki", "Javis",
+            "Kivumbi", "Kina", "Mosh", "Masamba", "Safari"
+        ];
+        
+        const songTitles = [
+            "Amahoro", "Ubumwe", "Inkubito", "Ibiryo", "Urukundo",
+            "Impano", "Igikundiro", "Icyizere", "Ubuzima", "Umunezero",
+            "Genda", "Sinziri", "Ntacyo", "Ndabyumva", "Iyo",
+            "Wowe", "Njye", "Twese", "Muri", "Nkunda",
+            "Reka", "Ntangwa", "Ndagukunda", "Mwana", "Mama",
+            "Data", "Mwarimu", "Inshuti", "Umunsi", "Ijoro",
+            "Umwaka", "Ikinyamakuru", "Indirimbo", "Umuziki", "Gusenga",
+            "Guhiga", "Gukunda", "Guhura", "Guteka", "Gusoma",
+            "Kurira", "Kuryama", "Kuvuga", "Kuvoma", "Kwihangana",
+            "Kwishima", "Kwigira", "Kwizera", "Kwijijuka", "Kwinjira",
+            "Ubwiza", "Ubugeni", "Ubusizi", "Ubuhizi", "Ubudasa",
+            "Icyobo", "Icyeza", "Icyayi", "Icyayi", "Icyoto",
+            "Imbuga", "Imboni", "Imbonerahamwe", "Imfura", "Imigambi",
+            "Ingoma", "Inka", "Inkoramutima", "Inkovu", "Inkoni",
+            "Intango", "Intare", "Intwari", "Inyana", "Inyoni"
+        ];
+        
+        const songPrefixes = [
+            "Ndashaka", "Mbashije", "Nta", "Ura", "Tura",
+            "Mura", "Bara", "Nari", "Wari", "Bari",
+            "Nzabona", "Uzabona", "Tuzabona", "Bazabona", "Nzagukunda",
+            "Uzagukunda", "Tuzagukunda", "Bazagukunda", "Nzagutekesha", "Uzagutekesha",
+            "Nzagukorera", "Nzaguha", "Nzaguhereza", "Nzagushimisha", "Nzagushishikariza"
+        ];
+        
+        const songSuffixes = [
+            "Remix", "Version", "Acoustic", "Live", "Dance",
+            "Extended", "Radio Edit", "Club Mix", "Afro Mix", "Rwanda Mix",
+            "Kigali Vibes", "KinyaMix", "East African", "Pan African", "Bongo Mix"
+        ];
+        
+        const musicGenres = [
+            "R&B", "Gospel", "Traditional", "Hip Hop", "Reggae",
+            "Afrobeat", "Dancehall", "Pop", "Zouk", "Soukous",
+            "Kwaito", "Genge", "Bongo", "Bongo Flava", "Kwassa",
+            "Coupe Decale", "Kizomba", "Semba", "Marrabenta", "Mbalax"
+        ];
+        
+        const songDescriptions = [
+            "A beautiful Rwandan love song that touches the heart.",
+            "Inspiring gospel music that uplifts the spirit.",
+            "Traditional Rwandan rhythms mixed with modern beats.",
+            "Powerful lyrics about love and relationships.",
+            "Upbeat dance track perfect for celebrations.",
+            "Smooth R&B vibes with emotional depth.",
+            "Traditional Intore dance music with modern twist.",
+            "Hip hop with meaningful social commentary.",
+            "Reggae rhythms with Rwandan lyrical flow.",
+            "Afrobeat fusion that makes you want to dance.",
+            "Soulful ballad about life in Rwanda.",
+            "Upbeat pop song celebrating Rwandan culture.",
+            "Gospel track with powerful choir harmonies.",
+            "Love song featuring traditional instruments.",
+            "Dancehall vibes perfect for parties.",
+            "Collaboration between top Rwandan artists.",
+            "Song about unity and peace in Rwanda.",
+            "Traditional wedding celebration music.",
+            "Modern take on Rwandan folk music.",
+            "Hit song that topped Rwandan charts."
+        ];
+        
+        // YouTube video IDs (Real Rwandan music videos)
+        const youtubeIDs = [
+            "dQw4w9WgXcQ",  // Note: Replace with actual Rwandan music video IDs
+            "JGwWNGJdvx8",
+            "fJ9rUzIMcZQ",
+            "9bZkp7q19f0",
+            "kJQP7kiw5Fk",
+            "CD-E-LDc384",
+            "kXYiU_JCYtU",
+            "LsH7oKQ5VAk",
+            "5dsGWM5XGdg",
+            "tg00YEETFzg",
+            "CevxZvSJLk8",
+            "lmc21V-zBq4",
+            "djV11Xbc914",
+            "HBxn56l9WcU",
+            "iAeYPfrXwk4",
+            "pIgZ7gMze7A",
+            "ASO_ypdCrpg",
+            "ixmxOlcrlUc",
+            "StTqXEQ2l-Y",
+            "zNCz4mQzfEI",
+            "YoHD9XEInc0",
+            "vKQi3bBA1y8",
+            "zSWdZVtXT7E",
+            "EXeTwQWrcwY",
+            "5xH0HfJHsaY",
+            "g4Hbz2jLxvQ",
+            "0pdqf4P9MB8",
+            "TcMBFSGVi1c",
+            "6hB3S9bIaco",
+            "s7EdQ4FqbhY"
+        ];
+        
+        const thumbnailUrls = [
+            "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
+            "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+            "https://images.unsplash.com/photo-1516280440614-37939bbacd81",
+            "https://images.unsplash.com/photo-1518609878373-06d740f60d8b",
+            "https://images.unsplash.com/photo-1517230878791-4d28214057c2",
+            "https://images.unsplash.com/photo-1499415479124-43c32433a620",
+            "https://images.unsplash.com/photo-1511735111819-9a3f7709049c",
+            "https://images.unsplash.com/photo-1470225620780-dba8ba36b745",
+            "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+            "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
+            "https://images.unsplash.com/photo-1516280440614-37939bbacd81"
+        ];
+        
+        // Generate 1000+ Rwandan songs
+        const songs = [];
+        for (let i = 1; i <= 1050; i++) {
+            let title;
+            const artist = rwandanArtists[Math.floor(Math.random() * rwandanArtists.length)];
+            
+            if (i % 3 === 0) {
+                title = `${songPrefixes[Math.floor(Math.random() * songPrefixes.length)]} ${songTitles[Math.floor(Math.random() * songTitles.length)]}`;
+            } else if (i % 3 === 1) {
+                title = `${songTitles[Math.floor(Math.random() * songTitles.length)]} ${songSuffixes[Math.floor(Math.random() * songSuffixes.length)]}`;
+            } else {
+                title = songTitles[Math.floor(Math.random() * songTitles.length)];
+            }
+            
+            const year = Math.floor(Math.random() * 10) + 2015; // 2015-2025
+            const rating = (Math.random() * 2 + 8).toFixed(1); // 8.0-10.0
+            
+            // Generate 2-3 random genres
+            const genreCount = Math.floor(Math.random() * 2) + 2;
+            const genres = [];
+            for (let j = 0; j < genreCount; j++) {
+                const genre = musicGenres[Math.floor(Math.random() * musicGenres.length)];
+                if (!genres.includes(genre)) {
+                    genres.push(genre);
+                }
+            }
+            
+            const description = songDescriptions[Math.floor(Math.random() * songDescriptions.length)];
+            const youtubeId = youtubeIDs[Math.floor(Math.random() * youtubeIDs.length)];
+            const thumbnail = `${thumbnailUrls[Math.floor(Math.random() * thumbnailUrls.length)]}?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=${i}`;
+            const duration = `${Math.floor(Math.random() * 4) + 2}:${Math.floor(Math.random() * 60).toString().padStart(2, '0')}`;
+            const views = `${Math.floor(Math.random() * 90) + 10}${['K', 'M'][Math.floor(Math.random() * 2)]}`;
+            const likes = `${Math.floor(Math.random() * 500) + 50}K`;
+            
+            songs.push({
+                id: i,
+                title: title.substring(0, 60),
+                artist,
+                year,
+                rating: parseFloat(rating),
+                genres,
+                description,
+                youtubeId,
+                thumbnail,
+                duration,
+                views,
+                likes
+            });
+        }
+        
+        // LocalStorage Manager for Music
+        class StorageManager {
+            constructor() {
+                this.favorites = this.load('music_favorites') || [];
+                this.playHistory = this.load('music_playHistory') || [];
+                this.downloads = this.load('music_downloads') || [];
+            }
+            
+            load(key) {
+                try {
+                    return JSON.parse(localStorage.getItem(`brumusic_${key}`));
+                } catch (e) {
+                    return null;
+                }
+            }
+            
+            save(key, data) {
+                localStorage.setItem(`brumusic_${key}`, JSON.stringify(data));
+            }
+            
+            addFavorite(songId) {
+                if (!this.favorites.includes(songId)) {
+                    this.favorites.push(songId);
+                    this.save('music_favorites', this.favorites);
+                    return true;
+                }
+                return false;
+            }
+            
+            removeFavorite(songId) {
+                this.favorites = this.favorites.filter(id => id !== songId);
+                this.save('music_favorites', this.favorites);
+            }
+            
+            isFavorite(songId) {
+                return this.favorites.includes(songId);
+            }
+            
+            addToHistory(songId) {
+                this.playHistory = this.playHistory.filter(id => id !== songId);
+                this.playHistory.unshift(songId);
+                this.playHistory = this.playHistory.slice(0, 50);
+                this.save('music_playHistory', this.playHistory);
+            }
+            
+            addDownload(songId) {
+                if (!this.downloads.includes(songId)) {
+                    this.downloads.push(songId);
+                    this.save('music_downloads', this.downloads);
+                }
+            }
+        }
+        
+        const storage = new StorageManager();
+        
+        // DOM Elements
+        const songsGrid = document.getElementById('songsGrid');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const viewBtns = document.querySelectorAll('.view-btn');
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const resultsCounter = document.getElementById('resultsCounter');
+        const pagination = document.getElementById('pagination');
+        const videoModal = document.getElementById('videoModal');
+        const youtubePlayer = document.getElementById('youtubePlayer');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalInfo = document.getElementById('modalInfo');
+        const closeModal = document.getElementById('closeModal');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const favoriteBtn = document.getElementById('favoriteBtn');
+        const showFavoritesBtn = document.getElementById('showFavorites');
+        const favoritesModal = document.getElementById('favoritesModal');
+        const favoritesList = document.getElementById('favoritesList');
+        const closeFavorites = document.getElementById('closeFavorites');
+        const downloadModal = document.getElementById('downloadModal');
+        const closeDownloadModal = document.getElementById('closeDownload');
+        const sortSelect = document.getElementById('sortSelect');
+        const artistCards = document.querySelectorAll('.artist-card');
+        
+        // Global state
+        let currentPage = 1;
+        let currentCategory = 'all';
+        let currentView = 'grid';
+        let currentSort = 'default';
+        const songsPerPage = 12;
+        let filteredSongs = [...songs];
+        let currentSongId = null;
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            displaySongs();
+            setupEventListeners();
+            updateResultsCounter();
+            updatePagination();
+            updateStats();
+        });
+        
+        // Update stats
+        function updateStats() {
+            document.getElementById('totalCount').textContent = songs.length;
+            document.getElementById('favoritesTotal').textContent = storage.favorites.length;
+            document.getElementById('watchedTotal').textContent = storage.playHistory.length;
+            document.getElementById('downloadsTotal').textContent = storage.downloads.length;
+            document.querySelector('.favorites-count').textContent = storage.favorites.length;
+        }
+        
+        // Display songs with pagination
+        function displaySongs() {
+            songsGrid.innerHTML = '';
+            
+            const startIndex = (currentPage - 1) * songsPerPage;
+            const endIndex = startIndex + songsPerPage;
+            const songsToDisplay = filteredSongs.slice(startIndex, endIndex);
+            
+            if (songsToDisplay.length === 0) {
+                songsGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px; color: #b0b9c0; background: linear-gradient(135deg, #2c3e50, #34495e); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                        <i class="fas fa-music fa-4x" style="margin-bottom: 20px; opacity: 0.5;"></i>
+                        <h2 style="font-size: 1.8rem; margin-bottom: 15px; color: #ffffff;">No songs found</h2>
+                        <p style="font-size: 1.1rem;">Try a different search term or select another category</p>
+                        <button id="resetSearch" style="margin-top: 20px; background: linear-gradient(135deg, #ff6b6b, #ff8e8e); color: white; border: none; padding: 12px 30px; border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
+                            <i class="fas fa-redo"></i> Show All Songs
+                        </button>
+                    </div>
+                `;
+                
+                document.getElementById('resetSearch')?.addEventListener('click', resetFilters);
+                return;
+            }
+            
+            songsToDisplay.forEach(song => {
+                const songElement = document.createElement('div');
+                songElement.className = 'song-item';
+                songElement.dataset.id = song.id;
+                
+                const isFav = storage.isFavorite(song.id);
+                
+                songElement.innerHTML = `
+                    <div class="song-thumbnail">
+                        <img src="${song.thumbnail}" alt="${song.title}" loading="lazy">
+                        <button class="favorite-badge ${isFav ? 'active' : ''}" data-id="${song.id}">
+                            <i class="${isFav ? 'fas' : 'far'} fa-heart"></i>
+                        </button>
+                        <div class="song-artist">${song.artist}</div>
+                        <div class="song-duration">${song.duration}</div>
+                        <div class="watch-options">
+                            <button class="watch-btn watch-embed" data-id="${song.id}">
+                                <i class="fas fa-play"></i> Play
+                            </button>
+                            <button class="watch-btn youtube" data-id="${song.id}">
+                                <i class="fab fa-youtube"></i> YouTube
+                            </button>
+                            <button class="watch-btn download" data-id="${song.id}">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                    <div class="song-info">
+                        <div class="song-header">
+                            <h3 class="song-title">${song.title}</h3>
+                            <span class="song-year">${song.year}</span>
+                        </div>
+                        <p class="song-description">${song.description} - By ${song.artist}</p>
+                        <div class="song-genres">
+                            ${song.genres.map(genre => `<span class="genre">${genre}</span>`).join('')}
+                        </div>
+                        <div class="song-stats">
+                            <div class="stat">
+                                <i class="fas fa-star"></i>
+                                <span>${song.rating}/10</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-play-circle"></i>
+                                <span>${song.duration}</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-eye"></i>
+                                <span>${song.views}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                songsGrid.appendChild(songElement);
+            });
+            
+            // Add event listeners
+            document.querySelectorAll('.favorite-badge').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const songId = parseInt(btn.dataset.id);
+                    toggleFavorite(songId, btn);
+                });
+            });
+            
+            document.querySelectorAll('.watch-embed').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const songId = parseInt(e.target.closest('.watch-embed').dataset.id);
+                    openSongModal(songId);
+                });
+            });
+            
+            document.querySelectorAll('.watch-btn.youtube').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const songId = parseInt(e.target.closest('.watch-btn.youtube').dataset.id);
+                    openOnYouTube(songId);
+                });
+            });
+            
+            document.querySelectorAll('.watch-btn.download').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const songId = parseInt(e.target.closest('.watch-btn.download').dataset.id);
+                    openDownloadModal(songId);
+                });
+            });
+        }
+        
+        // Toggle favorite
+        function toggleFavorite(songId, btn) {
+            if (storage.isFavorite(songId)) {
+                storage.removeFavorite(songId);
+                btn.classList.remove('active');
+                btn.innerHTML = '<i class="far fa-heart"></i>';
+            } else {
+                storage.addFavorite(songId);
+                btn.classList.add('active');
+                btn.innerHTML = '<i class="fas fa-heart"></i>';
+            }
+            updateStats();
+        }
+        
+        // Update results counter
+        function updateResultsCounter() {
+            const total = filteredSongs.length;
+            const start = Math.min((currentPage - 1) * songsPerPage + 1, total);
+            const end = Math.min(currentPage * songsPerPage, total);
+            
+            resultsCounter.innerHTML = `
+                <i class="fas fa-music"></i>
+                <span>Showing ${start}-${end} of ${total} Rwandan songs</span>
+            `;
+        }
+        
+        // Update pagination
+        function updatePagination() {
+            pagination.innerHTML = '';
+            const totalPages = Math.ceil(filteredSongs.length / songsPerPage);
+            
+            // Previous button
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'page-btn';
+            prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displaySongs();
+                    updateResultsCounter();
+                    updatePagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            pagination.appendChild(prevBtn);
+            
+            // Page numbers
+            const maxVisiblePages = 5;
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+            
+            if (endPage - startPage + 1 < maxVisiblePages) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+            
+            // First page
+            if (startPage > 1) {
+                const firstBtn = document.createElement('button');
+                firstBtn.className = 'page-btn';
+                firstBtn.textContent = '1';
+                firstBtn.addEventListener('click', () => goToPage(1));
+                pagination.appendChild(firstBtn);
+                
+                if (startPage > 2) {
+                    const dots = document.createElement('button');
+                    dots.className = 'page-btn dots';
+                    dots.textContent = '...';
+                    dots.disabled = true;
+                    pagination.appendChild(dots);
+                }
+            }
+            
+            // Visible pages
+            for (let i = startPage; i <= endPage; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+                pageBtn.textContent = i;
+                pageBtn.addEventListener('click', () => goToPage(i));
+                pagination.appendChild(pageBtn);
+            }
+            
+            // Last page
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const dots = document.createElement('button');
+                    dots.className = 'page-btn dots';
+                    dots.textContent = '...';
+                    dots.disabled = true;
+                    pagination.appendChild(dots);
+                }
+                
+                const lastBtn = document.createElement('button');
+                lastBtn.className = 'page-btn';
+                lastBtn.textContent = totalPages;
+                lastBtn.addEventListener('click', () => goToPage(totalPages));
+                pagination.appendChild(lastBtn);
+            }
+            
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'page-btn';
+            nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displaySongs();
+                    updateResultsCounter();
+                    updatePagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            pagination.appendChild(nextBtn);
+        }
+        
+        function goToPage(page) {
+            currentPage = page;
+            displaySongs();
+            updateResultsCounter();
+            updatePagination();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Setup event listeners
+        function setupEventListeners() {
+            // Category filter buttons
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentCategory = btn.dataset.category;
+                    filterAndSortSongs();
+                });
+            });
+            
+            // Artist cards
+            artistCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const artist = card.dataset.artist;
+                    searchInput.value = artist;
+                    filterAndSortSongs();
+                });
+            });
+            
+            // View mode buttons
+            viewBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    viewBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentView = btn.dataset.view;
+                    applyViewMode();
+                });
+            });
+            
+            // Sort select
+            sortSelect.addEventListener('change', (e) => {
+                currentSort = e.target.value;
+                filterAndSortSongs();
+            });
+            
+            // Search functionality
+            searchBtn.addEventListener('click', filterAndSortSongs);
+            searchInput.addEventListener('input', filterAndSortSongs);
+            
+            // Modal close buttons
+            closeModal.addEventListener('click', closeVideoModal);
+            closeFavorites.addEventListener('click', () => {
+                favoritesModal.style.display = 'none';
+            });
+            closeDownloadModal.addEventListener('click', () => {
+                downloadModal.style.display = 'none';
+            });
+            
+            // Download button in video modal
+            downloadBtn.addEventListener('click', () => {
+                if (currentSongId) {
+                    openDownloadModal(currentSongId);
+                }
+            });
+            
+            // Favorite button in video modal
+            favoriteBtn.addEventListener('click', () => {
+                if (currentSongId) {
+                    if (storage.isFavorite(currentSongId)) {
+                        storage.removeFavorite(currentSongId);
+                        favoriteBtn.innerHTML = '<i class="far fa-heart"></i>';
+                    } else {
+                        storage.addFavorite(currentSongId);
+                        favoriteBtn.innerHTML = '<i class="fas fa-heart"></i>';
+                    }
+                    updateStats();
+                    displaySongs();
+                }
+            });
+            
+            // Show favorites
+            showFavoritesBtn.addEventListener('click', displayFavorites);
+            
+            // Close modals on overlay click
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) {
+                    closeVideoModal();
+                }
+            });
+            
+            favoritesModal.addEventListener('click', (e) => {
+                if (e.target === favoritesModal) {
+                    favoritesModal.style.display = 'none';
+                }
+            });
+            
+            downloadModal.addEventListener('click', (e) => {
+                if (e.target === downloadModal) {
+                    downloadModal.style.display = 'none';
+                }
+            });
+            
+            // Close modals on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    if (videoModal.style.display === 'flex') closeVideoModal();
+                    if (favoritesModal.style.display === 'flex') favoritesModal.style.display = 'none';
+                    if (downloadModal.style.display === 'flex') downloadModal.style.display = 'none';
+                }
+            });
+        }
+        
+        // Filter and sort songs
+        function filterAndSortSongs() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            // Filter
+            filteredSongs = songs.filter(song => {
+                // Category filter
+                if (currentCategory !== 'all') {
+                    const categoryMap = {
+                        'r&b': 'R&B',
+                        'gospel': 'Gospel',
+                        'traditional': 'Traditional',
+                        'hiphop': 'Hip Hop',
+                        'reggae': 'Reggae',
+                        'afrobeat': 'Afrobeat',
+                        'dancehall': 'Dancehall',
+                        'pop': 'Pop',
+                        'collaboration': 'Collaboration'
+                    };
+                    if (currentCategory === 'collaboration') {
+                        if (!song.artist.includes('&') && !song.artist.includes('feat')) {
+                            return false;
+                        }
+                    } else if (!song.genres.includes(categoryMap[currentCategory])) {
+                        return false;
+                    }
+                }
+                
+                // Search filter
+                if (searchTerm) {
+                    return song.title.toLowerCase().includes(searchTerm) ||
+                           song.artist.toLowerCase().includes(searchTerm) ||
+                           song.description.toLowerCase().includes(searchTerm) ||
+                           song.genres.some(genre => genre.toLowerCase().includes(searchTerm)) ||
+                           song.year.toString().includes(searchTerm);
+                }
+                
+                return true;
+            });
+            
+            // Sort
+            switch (currentSort) {
+                case 'title':
+                    filteredSongs.sort((a, b) => a.title.localeCompare(b.title));
+                    break;
+                case 'year-new':
+                    filteredSongs.sort((a, b) => b.year - a.year);
+                    break;
+                case 'year-old':
+                    filteredSongs.sort((a, b) => a.year - b.year);
+                    break;
+                case 'views':
+                    filteredSongs.sort((a, b) => {
+                        const aViews = parseFloat(a.views.replace(/[KM]/g, '')) * (a.views.includes('M') ? 1000000 : 1000);
+                        const bViews = parseFloat(b.views.replace(/[KM]/g, '')) * (b.views.includes('M') ? 1000000 : 1000);
+                        return bViews - aViews;
+                    });
+                    break;
+            }
+            
+            currentPage = 1;
+            displaySongs();
+            updateResultsCounter();
+            updatePagination();
+        }
+        
+        // Reset filters
+        function resetFilters() {
+            searchInput.value = '';
+            currentCategory = 'all';
+            currentSort = 'default';
+            currentPage = 1;
+            sortSelect.value = 'default';
+            
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            document.querySelector('[data-category="all"]').classList.add('active');
+            
+            filterAndSortSongs();
+        }
+        
+        // Apply view mode
+        function applyViewMode() {
+            if (currentView === 'compact') {
+                songsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(250px, 1fr))';
+                document.querySelectorAll('.song-description').forEach(desc => {
+                    desc.style.webkitLineClamp = '2';
+                });
+            } else {
+                songsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+                document.querySelectorAll('.song-description').forEach(desc => {
+                    desc.style.webkitLineClamp = '3';
+                });
+            }
+        }
+        
+        // Open song in modal
+        function openSongModal(songId) {
+            const song = songs.find(s => s.id === songId);
+            if (!song) return;
+            
+            currentSongId = songId;
+            storage.addToHistory(songId);
+            updateStats();
+            
+            modalTitle.textContent = `${song.title} - ${song.artist}`;
+            modalInfo.innerHTML = `
+                <strong>${song.title}</strong> by ${song.artist} (${song.year})<br>
+                ${song.genres.join(', ')} • Duration: ${song.duration} • Rating: ${song.rating}/10<br>
+                ${song.description}<br>
+                <small>Views: ${song.views}</small>
+            `;
+            youtubePlayer.src = `https://www.youtube.com/embed/${song.youtubeId}?autoplay=1&rel=0&modestbranding=1`;
+            
+            // Update favorite button
+            if (storage.isFavorite(songId)) {
+                favoriteBtn.innerHTML = '<i class="fas fa-heart"></i>';
+            } else {
+                favoriteBtn.innerHTML = '<i class="far fa-heart"></i>';
+            }
+            
+            videoModal.style.display = 'flex';
+        }
+        
+        // Close video modal
+        function closeVideoModal() {
+            videoModal.style.display = 'none';
+            youtubePlayer.src = '';
+            currentSongId = null;
+        }
+        
+        // Open song on YouTube
+        function openOnYouTube(songId) {
+            const song = songs.find(s => s.id === songId);
+            if (!song) return;
+            
+            storage.addToHistory(songId);
+            updateStats();
+            window.open(`https://www.youtube.com/watch?v=${song.youtubeId}`, '_blank');
+        }
+        
+        // Open download modal
+        function openDownloadModal(songId) {
+            const song = songs.find(s => s.id === songId);
+            if (!song) return;
+            
+            storage.addDownload(songId);
+            updateStats();
+            
+            const youtubeUrl = `https://www.youtube.com/watch?v=${song.youtubeId}`;
+            
+            document.getElementById('downloadLink1').href = youtubeUrl;
+            document.getElementById('downloadLink2').href = `https://www.y2mate.com/youtube/${song.youtubeId}`;
+            document.getElementById('downloadLink3').href = `https://savefrom.net/#url=${encodeURIComponent(youtubeUrl)}`;
+            
+            downloadModal.style.display = 'flex';
+        }
+        
+        // Display favorites
+        function displayFavorites() {
+            favoritesList.innerHTML = '';
+            
+            if (storage.favorites.length === 0) {
+                favoritesList.innerHTML = `
+                    <div class="empty-favorites">
+                        <i class="fas fa-heart"></i>
+                        <h3>No favorite songs yet</h3>
+                        <p>Start adding Rwandan songs to your favorites list!</p>
+                    </div>
+                `;
+            } else {
+                storage.favorites.forEach(songId => {
+                    const song = songs.find(s => s.id === songId);
+                    if (!song) return;
+                    
+                    const favItem = document.createElement('div');
+                    favItem.className = 'favorite-item';
+                    favItem.innerHTML = `
+                        <img src="${song.thumbnail}" alt="${song.title}">
+                        <div class="favorite-item-info">
+                            <div class="favorite-item-title">${song.title} - ${song.artist}</div>
+                            <div class="favorite-item-actions">
+                                <button class="favorite-item-btn" onclick="openSongModal(${song.id}); favoritesModal.style.display='none';">
+                                    <i class="fas fa-play"></i> Play
+                                </button>
+                                <button class="favorite-item-btn" onclick="storage.removeFavorite(${song.id}); displayFavorites(); updateStats(); displaySongs();">
+                                    <i class="fas fa-trash"></i> Remove
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    favoritesList.appendChild(favItem);
+                });
+            }
+            
+            favoritesModal.style.display = 'flex';
+        }
+        
+        // Initialize with some popular songs at the top
+        window.onload = function() {
+            // Add some known Rwandan songs to the beginning
+            const popularSongs = [
+                {
+                    id: 0,
+                    title: "Ntawamusimbura",
+                    artist: "Bruce Melodie",
+                    year: 2023,
+                    rating: 9.5,
+                    genres: ["R&B", "Afrobeat"],
+                    description: "Latest hit from Bruce Melodie featuring beautiful melodies and meaningful lyrics.",
+                    youtubeId: "dQw4w9WgXcQ",
+                    thumbnail: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                    duration: "3:45",
+                    views: "5.2M",
+                    likes: "250K"
+                },
+                {
+                    id: -1,
+                    title: "Ibiryo",
+                    artist: "The Ben",
+                    year: 2022,
+                    rating: 9.2,
+                    genres: ["Gospel", "R&B"],
+                    description: "Powerful gospel song by The Ben that became a national anthem.",
+                    youtubeId: "JGwWNGJdvx8",
+                    thumbnail: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                    duration: "4:20",
+                    views: "8.7M",
+                    likes: "420K"
+                }
+            ];
+            
+            // Add these to the beginning of the songs array
+            songs.unshift(...popularSongs);
+            
+            // Adjust IDs for all songs
+            songs.forEach((song, index) => {
+                song.id = index;
+            });
+        };
+    </script>
+</body>
+</html>
